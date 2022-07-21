@@ -1,0 +1,22 @@
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:2222/eureka/
+#server:
+#  port: 6666
+#spring:
+#  application:
+#    name: feign
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:2222/eureka/
+server:
+  port: 7777
+spring:
+  application:
+    name: feign #开启熔断器
+feign:
+  hystrix:
+    enabled: true

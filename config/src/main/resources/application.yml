@@ -1,0 +1,22 @@
+server:
+  port: 7777
+spring:
+  application:
+    name: config
+  profiles:
+    active: dev
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/hongfan1008/spring-cloud.git #配置git仓库地址          searchPaths: 第09课/config #配置仓库路径
+          username: hongfan1008 #访问git仓库的用户名
+          password: gz137139 #访问git仓库的用户密码
+          label: dev #配置仓库的分支
+eureka:
+  instance:
+#    hostname: ${spring.cloud.client.ipAddress}
+#    instanceId: ${spring.cloud.client.ipAddress}:${server.port}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:2222/eureka/
